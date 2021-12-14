@@ -353,7 +353,7 @@ async Task<BallotBox> CollectVotesAsync(ChannelReader<Vote> votesChan,
                     Console.WriteLine($"{vote.Username} voted for a draw");
                     ballotBox.Draw += 1;
                 }
-                else if (Regex.IsMatch(vote.Action, "\\d-\\d")) // (e.g. 0-1)
+                else if (Regex.IsMatch(vote.Action, "!resign")) // (e.g. 0-1)
                 {
                     Console.WriteLine($"{vote.Username} voted to resign");
                     ballotBox.Resign += 1;
